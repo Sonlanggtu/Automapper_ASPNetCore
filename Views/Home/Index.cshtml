@@ -1,0 +1,59 @@
+﻿@model FluentValidationASPNET.Models.CustomerViewModel;
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<form asp-controller="Home" asp-action="Index" method="post">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label asp-for="UserName">Tài khoản</label>
+            <input type="text" class="form-control" asp-for="UserName" placeholder="vd DamSon.... ">
+        </div>
+        <div class="form-group col-md-6">
+            <label asp-for="Password">Mật khẩu</label>
+            <input type="password" asp-for="Password" class="form-control" placeholder="Password">
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Xa">Xã/ Phường</label>
+        <input type="text" class="form-control" asp-for="Xa" placeholder="1234 Main St">
+    </div>
+    <div class="form-group">
+        <label asp-for="Quan">Quận/ Huyện</label>
+        <input type="text" class="form-control" asp-for="Quan" placeholder="Apartment, studio, or floor">
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label asp-for="City">Tỉnh/ Thành Phố</label>
+            <select asp-for="City" class="form-control">
+                <option selected value="HN">Hà Nội</option>
+                <option value="TPHCM">TP.HCM</option>
+                <option value="CanTho">Cần Thơ</option>
+                <option value="HY">Hưng Yên</option>
+                <option value="LamDong">Lâm Đồng</option>
+            </select>
+
+        </div>
+        <div class="form-group col-md-4">
+            <label asp-for="FullName">Họ tên</label>
+            <input type="text" asp-for="FullName" class="form-control">
+        </div>
+        <div class="form-group col-md-2">
+            <label asp-for="PostCode">PostCode</label>
+            <input type="text" class="form-control" asp-for="PostCode">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="form-check">
+            <input class="form-check-input" asp-for="Check" type="checkbox">
+            <label class="form-check-label" asp-for="Check">
+                Xác nhận
+            </label>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Đăng ký</button>
+</form>
