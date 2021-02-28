@@ -17,6 +17,7 @@ B2: Write Configuration Class Mapping
     }
 
 B3. Config Startup.cs
+
             // AutoMapper
             #region Add AutoMapper
             var mapperConfig = new MapperConfiguration(config =>
@@ -24,9 +25,9 @@ B3. Config Startup.cs
                 config.AddProfile(new CustomerMappingProfile());
             });
             services.AddSingleton(provider => mapperConfig.CreateMapper());
-
+            #engion Add AutoMapper
 B4: Use Automapping
-// POST api/<CustomerController>
+   
         [HttpPost("CreateCustomerAsync")]
         public async Task<bool> Post()
         {
@@ -43,7 +44,6 @@ B4: Use Automapping
             customerVm.Address = "Hung Yen";
             customerVm.Gender = "Nam";
             customerVm.Birdthday = DateTime.Now;
-
             var customerModel = _mapper.Map<Customer>(customerVm);
             _dbContext.Customers.Add(customerModel);
             var tracker = _dbContext.ChangeTracker.Entries();
